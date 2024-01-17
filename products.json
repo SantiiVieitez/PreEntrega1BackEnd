@@ -1,0 +1,28 @@
+[
+  {
+    "title": "Producto 2",
+    "description": "Descripción del Producto 2",
+    "code": "P002",
+    "price": 200,
+    "status": true,
+    "stock": 15,
+    "category": "Ropa",
+    "thumbnails": [
+      "https://via.placeholder.com/150"
+    ],
+    "id": 2
+  },
+  {
+    "title": "Producto 3",
+    "description": "Descripción del Producto 3",
+    "code": "P003",
+    "price": 250,
+    "status": true,
+    "stock": 20,
+    "category": "Hogar",
+    "thumbnails": [
+      "https://via.placeholder.com/150"
+    ],
+    "id": 3
+  }
+]
