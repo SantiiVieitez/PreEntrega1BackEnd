@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         if (limit !== undefined) {
             res.json({ products: products.slice(0, limit) });
         } else {
-            res.json({ products });
+            res.render('home', { products });
         }
     } catch (error) {
         console.error('Error al obtener productos:', error);

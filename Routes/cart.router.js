@@ -10,21 +10,21 @@ router.post('/', (req, res) => {
     res.status(201).json(newCart);
   });
 
-router.get('/:cid', async (req, res) => {
+  router.get('/:id', async (req, res) => {
     try {
-      const cartId = parseInt(req.params.cid);
-      const cart = await cartManager.getCartById(cartId);
-  
-      if (!cart) {
-        return res.status(404).json({ error: 'Carrito no encontrado' });
-      }
-  
-      return res.json(cart.Products);
+        let id = req.params.id;
+        const cart = await cartManager.getCartById(id);
+
+        if (cart) {
+            res.json({ cart });
+        } else {
+            res.status(404).json({ error: 'Carrito no encontrado' });
+        }
     } catch (error) {
-      console.error(error.message);
-      res.status(500).json({ error: 'Error del servidor' });
+        console.error('Error al obtener carritos:', error);
+        res.status(500).json({ error: 'Error al obtener carritos' });
     }
-  });
+});
   
 
 router.post('/:cid/product/:pid', async (req, res) => {

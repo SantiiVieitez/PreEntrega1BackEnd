@@ -7,9 +7,7 @@
     "status": true,
     "stock": 15,
     "category": "Ropa",
-    "thumbnails": [
-      "https://via.placeholder.com/150"
-    ],
+    "thumbnails": [],
     "id": 2
   },
   {
@@ -20,9 +18,7 @@
     "status": true,
     "stock": 20,
     "category": "Hogar",
-    "thumbnails": [
-      "https://via.placeholder.com/150"
-    ],
+    "thumbnails": [],
     "id": 3
   }
 ]

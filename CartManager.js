@@ -51,23 +51,6 @@ class CartManager {
       throw error; // Re-lanza el error para que pueda ser manejado por otros.
     }
   }
-
-  async getCartById(cartId) {
-    try {
-      const carts = await this.loadCarts();
-      const cart = carts.find(cart => cart.id === cartId);
-
-      if (!cart) {
-        return null; // Carrito no encontrado
-      }
-
-      return cart;
-    } catch (error) {
-      console.error('Error al obtener carrito por ID:', error.message);
-      throw error;
-    }
-  }
-
   async getOrCreateCart(cartId) {
     try {
       const carts = await this.loadCarts();
@@ -89,6 +72,29 @@ class CartManager {
       throw error;
     }
   }
+
+  async getCartById(id) {
+    try {
+        const carts = await this.loadCarts();
+
+        if (!carts) {
+            console.error('Error: El archivo carritos.json está vacío o no es válido.');
+            return null;
+        }
+
+        const cart = carts.find(p => p.id && p.id.toString() === id.toString());
+
+        if (!product) {
+            console.error('Error: Cart no encontrado con el ID', id);
+            return null;
+        }
+
+        return cart;
+    } catch (error) {
+        console.error('Error al obtener carritos:', error);
+        return null;
+  }
+}
 }
 
 
